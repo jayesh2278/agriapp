@@ -1,17 +1,14 @@
 from django import forms
-from .models import Post, Images
+from .models import Post,adress
 
 class PostForm(forms.ModelForm):
-    title = forms.CharField(max_length=128)
-    body = forms.CharField(max_length=245, label="Item Description.")
- 
     class Meta:
         model = Post
-        fields = ('title', 'body', )
- 
- 
-class ImageForm(forms.ModelForm):
-    image = forms.ImageField(label='Image')    
+        fields = ('category','title', 'body','image1','image2','image3')
+
+class adressform(forms.ModelForm):
     class Meta:
-        model = Images
-        fields = ('image', )
+        model= adress
+        fields=('state','district','taluko','village','pincode')
+ 
+ 

@@ -6,5 +6,8 @@ from . import views
 
 urlpatterns = [
     path('index',views.addNoteView,name= 'index'),
+    path('categaryview',views.categoryview,name = 'all_category'),
+    path('catdetail/<int:id>',views.catdetail,name = 'catdetail'),
+    path('adressform',views.adrform,name='adrform'),
         
 ]

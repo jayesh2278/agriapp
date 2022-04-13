@@ -71,7 +71,7 @@ def login1(request):
                 user = authenticate(username=username, password=password)    
             if user is not None:
                     login(request, user)
-                    return redirect('a/index')
+                    return redirect('a/categaryview')
                 
             else:
                     return HttpResponse('You are now logged in as not user')
