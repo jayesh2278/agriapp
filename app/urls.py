@@ -9,5 +9,6 @@ urlpatterns = [
     path('categaryview',views.categoryview,name = 'all_category'),
     path('catdetail/<int:id>',views.catdetail,name = 'catdetail'),
     path('adressform',views.adrform,name='adrform'),
+    path('userallpost/<int:id>',views.userallpost,name = 'userallpost'),
         
 ]

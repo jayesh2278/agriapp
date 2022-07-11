@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>form</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<style>
+    input[type=text],
+    select {
+        width: 15%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-<body>
-    <form action="" method="post">
+    input[type=submit] {
+        width: 5%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 5px;
+        margin: 10px 70px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+
+    }
+
+    input[type=password] ,
+    select {
+        width: 15%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
+
+
+<body >
+
+    <form id="post_form" action="" method="post" enctype="multipart/form-data">
         {{form.as_p}}
         {% csrf_token %}
         <input type="submit" value="submit">
-    </form>
+    </form><br>
+    <span>if you are new user <a href="{% url 'firstindex' %}">signup</a></span>
+
 </body>
 
 </html>

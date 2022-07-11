@@ -13,7 +13,9 @@ from .token import account_activation_token
 from django.contrib.auth.models import User  
 from django.core.mail import EmailMessage 
 from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth import get_user_model   
+from django.contrib.auth import get_user_model  
+from app.models import adress
+from app.forms import adressform 
   
 def signup(request):  
     if request.method == 'POST':  
@@ -53,7 +55,8 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):  
         user.is_active = True  
         user.save()  
-        return HttpResponseRedirect('login1/')  
+        return HttpResponseRedirect('login1/')
+        #return HttpResponseRedirect('adrs/')  
     else:  
         return HttpResponse('Activation link is invalid!')  
 
@@ -101,4 +104,4 @@ def login1(request):
 
     else:
         form = loginform()
-        return render(request,'loginform.html',{"form":form})    
+        return render(request,'loginform.html',{"form":form})

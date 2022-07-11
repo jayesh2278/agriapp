@@ -57,3 +57,10 @@ def adrform(request):
         form = adressform()
         return render(request,'adressform.html',{'form':form})
 
+def userallpost(request,id):
+   posts = Post.objects.filter(user = id)
+   return render(request,'alluserpost.html',{'posts':posts})
+
+   
+
+

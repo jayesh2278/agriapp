@@ -27,8 +27,10 @@
   {% for post in posts %}
   <div class = "step">
 
-    <h4>{{post.user}}</h4>
+    
+    <a href="{% url 'userallpost' post.user.id  %}">{{post.user}}</a>
     <h5>{{post.title}}</h5>
+     {{post.user.id}}
     <p>{{post.body}}</p>
     <img src="{{post.image1.url}}" alt="img1" height="100px" width="100px">
     {% if post.image2 %}

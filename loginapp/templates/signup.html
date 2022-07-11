@@ -6,17 +6,17 @@
     <form method="post">
         {% csrf_token %}
         {% for field in form %}
-        <p>
+        <div>
             {{ field.label_tag }}<br>
-            {{ field }}
+            {{ field }}<br><br>
             {% if field.help_text %}
             <small style="display: none ">{{ field.help_text }}</small>
             {% endif %}
             {% for error in field.errors %}
         <p style="color: red">{{ error }}</p>
         {% endfor %}
-        </p>
-        {% endfor %}
+        </div>
+        {% endfor %}<br>
         <button type="submit">Sign up</button>
     </form>
 </div>
